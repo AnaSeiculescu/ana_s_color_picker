@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    border: 2px solid lightgrey;
+    padding: 35px;
+    color:darkslategrey;
+    background-color:whitesmoke;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+#titles {
+    width: 584px;
+    margin: 15px auto;
+}
+
+#hue {
+    text-align: left;
+    margin-left: 15px;
+}
+
+#picked {
+    margin-left: 230px;
+}
+
+#color-boxes {
+    text-align: center;
+}
+
+#set-color-rect {
+    height: 465px;
+    width: 60px;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+#set-color-rect > div {
+    height: 8px;
+    border: 1px solid black;
+    margin-bottom: 3px;
+}
+
+#color0 {
+    background-color: hsl(0, 100%, 50%);
+}
+
+#color1 {
+    background-color: hsl(10, 100%, 50%);
+}
+
+#color2 {
+    background-color: hsl(20, 100%, 50%);
+}
+
+#color3 {
+    background-color: hsl(30, 100%, 50%);
+}
+
+#color4 {
+    background-color: hsl(40, 100%, 50%);
+}
+
+#color5 {
+    background-color: hsl(50, 100%, 50%);
+}
+
+#color6 {
+    background-color: hsl(60, 100%, 50%);
+}
+
+#color7 {
+    background-color: hsl(70, 100%, 50%);
+}
+
+#color8 {
+    background-color: hsl(80, 100%, 50%);
+}
+
+#color9 {
+    background-color: hsl(90, 100%, 50%);
+}
+
+#color10 {
+    background-color: hsl(100, 100%, 50%);
+}
+
+#color11 {
+    background-color: hsl(110, 100%, 50%);
+}
+
+#color12 {
+    background-color: hsl(120, 100%, 50%);
+}
+
+#color13 {
+    background-color: hsl(130, 100%, 50%);
+}
+
+#color14 {
+    background-color: hsl(140, 100%, 50%);
+}
+
+#color15 {
+    background-color: hsl(150, 100%, 50%);
+}
+
+#color16 {
+    background-color: hsl(160, 100%, 50%);
+}
+
+#color17 {
+    background-color: hsl(170, 100%, 50%);
+}
+
+#color18 {
+    background-color: hsl(180, 100%, 50%);
+}
+
+#color18 {
+    background-color: hsl(180, 100%, 50%);
+}
+
+#color19 {
+    background-color: hsl(190, 100%, 50%);
+}
+
+#color20 {
+    background-color: hsl(200, 100%, 50%);
+}
+
+#color21 {
+    background-color: hsl(210, 100%, 50%);
+}
+
+#color22 {
+    background-color: hsl(220, 100%, 50%);
+}
+
+#color23 {
+    background-color: hsl(230, 100%, 50%);
+}
+
+#color24 {
+    background-color: hsl(240, 100%, 50%);
+}
+
+#color25 {
+    background-color: hsl(250, 100%, 50%);
+}
+
+#color26 {
+    background-color: hsl(260, 100%, 50%);
+}
+
+#color27 {
+    background-color: hsl(270, 100%, 50%);
+}
+
+#color28 {
+    background-color: hsl(280, 100%, 50%);
+}
+
+#color29 {
+    background-color: hsl(290, 100%, 50%);
+}
+
+#color30 {
+    background-color: hsl(300, 100%, 50%);
+}
+
+#color31 {
+    background-color: hsl(310, 100%, 50%);
+}
+
+#color32 {
+    background-color: hsl(320, 100%, 50%);
+}
+
+#color33 {
+    background-color: hsl(330, 100%, 50%);
+}
+
+#color34 {
+    background-color: hsl(340, 100%, 50%);
+}
+
+#color35 {
+    background-color: hsl(350, 100%, 50%);
+}
+
+#border-top-color {
+    height: 40px;
+    background-color: lightslategray;
+}
+
+#color-picked {
+    width: 500px;
+    height: 465px;
+    border: 2px solid grey;
+    display: inline-block;
+}
