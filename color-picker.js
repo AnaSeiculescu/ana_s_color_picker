@@ -26,15 +26,18 @@ let textToDisappear = document.getElementById("text-to-disappear");
 console.log(textToDisappear);
 
 for (let j = 0; j < 360; j += 10) {
-
     let colorBtn = document.getElementById(j);
-
     colorBtn.addEventListener("click", function() {
+        for (let k = 0; k < 360; k += 10) {
+            let borderVerif = document.getElementById(k);
+            if (borderVerif.style.border == "2px solid black") {
+                // borderVerif.style.border = "0";
+                borderVerif.style.border = null;
+            }
+        }
         hueNumber.innerText = j;
         textToDisappear.style.display = 'none';
-        // textToDisappear.innerText = '';
         selectedHue.style.backgroundColor = colorBtn.style.backgroundColor;
         colorBtn.style.border = "2px solid black";
     })
-
 }
