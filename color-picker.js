@@ -1,7 +1,5 @@
 
 let theBigRect = document.getElementById("big-rect");
-// let styleTheBigBox = getComputedStyle(theBigRect);
-// console.log(styleTheBigBox);
 
 for (let i = 0; i < 360; i += 10) {
 
@@ -14,24 +12,21 @@ for (let i = 0; i < 360; i += 10) {
         return colorBox;
     }
 
-    document.getElementById("set-color-rect").appendChild(createColorBox(i));
-    // console.log(createColorBox(i));
-
+    document.getElementById("batch-colors-rect").appendChild(createColorBox(i));
 }
 
 let hueNumber = document.getElementById("hue-number");
-// console.log(hueNumber);
 let selectedHue = document.getElementById("selected-hue");
 let textToDisappear = document.getElementById("text-to-disappear");
 console.log(textToDisappear);
 
 for (let j = 0; j < 360; j += 10) {
+
     let colorBtn = document.getElementById(j);
     colorBtn.addEventListener("click", function() {
         for (let k = 0; k < 360; k += 10) {
             let borderVerif = document.getElementById(k);
             if (borderVerif.style.border == "2px solid black") {
-                // borderVerif.style.border = "0";
                 borderVerif.style.border = null;
             }
         }
@@ -40,4 +35,5 @@ for (let j = 0; j < 360; j += 10) {
         selectedHue.style.backgroundColor = colorBtn.style.backgroundColor;
         colorBtn.style.border = "2px solid black";
     })
+    
 }
