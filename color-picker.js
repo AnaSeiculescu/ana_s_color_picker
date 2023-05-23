@@ -8,7 +8,6 @@ for (let i = 0; i < 360; i += 10) {
         let colorBox = document.createElement("li");
         colorBox.id = i;
         colorBox.style.backgroundColor = "hsl(" + i + ", 100%, 50%)";
-        colorBox.style.height = Number(theBigRect.scrollHeight) / 36 - 3 + "px";
         return colorBox;
     }
 
@@ -35,5 +34,5 @@ for (let j = 0; j < 360; j += 10) {
         selectedHue.style.backgroundColor = colorBtn.style.backgroundColor;
         colorBtn.style.border = "2px solid black";
     })
-    
+
 }
