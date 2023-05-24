@@ -23,12 +23,12 @@ h1 {
     grid-template-rows: 40px 460px 45px 45px;
     width: 560px;
     margin: 0 auto;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     text-align: center;
 }
 
 header, ul, main, section, footer {
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 header {
@@ -38,12 +38,12 @@ header {
     grid-template-rows: 40px;
     grid-template-columns: 1fr 8fr;
     align-items: center;
+    border: 1px solid black;
 }
 
 header > span {
     font-size: 20px;
     text-align: center;
-    
 }
 
 ul {
@@ -62,10 +62,16 @@ ul > li:hover {
 
 main {
     grid-area: main;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 1px;
+    grid-template-rows: repeat(8, 1fr);
 }
 
 section {
     grid-area: section;
+    display: inline-flex;
+    justify-content: space-between;
 }
 
 footer {
@@ -84,7 +90,7 @@ footer {
     margin-left: 5px;
 }
 
-#selected-hue > p {
+/* #selected-hue > p {
     text-align: center;
     margin-top: 10px;
-}
+} */

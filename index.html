@@ -4,6 +4,7 @@
     <head>
         <title>Ana's Color Picker</title>
         <link rel="stylesheet" href="color-picker.css">
+        <script src="jquery-3.6.4.min.js"></script>
     </head>
 
     <body>
@@ -15,19 +16,22 @@
 
             <header id="titles">
                 <span id="hue">Hue</span>
-                <span id="picked">Picked color</span>
+                <span id="picked">Pick a color</span>
             </header>
 
             <ul id="batch-colors-rect"></ul>
 
-            <main id="big-rect"></main>
+            <main id="big-rect">
+
+            </main>
 
             <section id="hue-value">
                 <p>Hue value: <span id="hue-number"></span></p>
+                <!-- <p id="hsl-color-value"></p> -->
             </section>
 
-            <footer id="selected-hue">
-                <p id="text-to-disappear">Select Hue</p>
+            <footer id="selected-color">
+                <!-- <p id="text-to-disappear">Select Hue</p> -->
             </footer>
 
         </div>
