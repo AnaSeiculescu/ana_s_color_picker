@@ -27,10 +27,6 @@ h1 {
     text-align: center;
 }
 
-header, ul, main, section, footer {
-    /* border: 1px solid black; */
-}
-
 header {
     grid-area: header;
     text-align: left;
@@ -44,11 +40,7 @@ header {
 header > span {
     font-size: 20px;
     text-align: center;
-    width: 585px;
-    margin: 0 auto;
-    border: 2px solid black;
 }
-
 
 ul {
     grid-area: ul;
@@ -93,9 +85,3 @@ footer {
     margin-top: 10px;
     margin-left: 5px;
 }
-
-/* #selected-hue > p {
-    text-align: center;
-    margin-top: 10px;
-} */
-
