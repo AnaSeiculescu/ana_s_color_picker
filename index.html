@@ -2,9 +2,9 @@
 <html>
 
     <head>
-        <title>Color Picker</title>
-        <style></style>
+        <title>Ana's Color Picker</title>
         <link rel="stylesheet" href="color-picker.css">
+        <script src="jquery-3.6.4.min.js"></script>
     </head>
 
     <body>
@@ -12,27 +12,27 @@
         <div id="border-top-color"></div>
         <h1>Color Picker</h1>
 
-        
-
         <div id="color-boxes">
 
-            <div id="titles">
-                <span id="hue">Hue</span><span id="picked">Picked color</span>
-            </div>
-    
-            <ul id="set-color-rect"></ul>
+            <header id="titles">
+                <span id="hue">Hue</span>
+                <span id="picked">Pick a color</span>
+            </header>
 
-            <div id="big-rect">
-    
-            </div>
+            <ul id="batch-colors-rect"></ul>
 
-            <div id="hue-value">
+            <main id="big-rect">
+
+            </main>
+
+            <section id="hue-value">
                 <p>Hue value: <span id="hue-number"></span></p>
-            </div>
+                <!-- <p id="hsl-color-value"></p> -->
+            </section>
 
-            <div id="selected-hue">
-                <p id="text-to-disappear">Hue value: Select Hue</p>
-            </div>
+            <footer id="selected-color">
+                <!-- <p id="text-to-disappear">Select Hue</p> -->
+            </footer>
 
         </div>
 
