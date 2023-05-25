@@ -36,11 +36,14 @@ for (let i = 0; i < 360; i += 10) {
 }
 
 let hueNumber = document.getElementById("hue-number");
-let selectedColor = document.getElementById("selected-color");
 let hueValue = document.getElementById("hue-value");
-
 let gridColors = document.getElementById("big-rect");
+let selectedColor = document.getElementById("selected-color");
+let btnsForPickedColor = document.getElementById("buttons-for-picked-color");
 let hslColorValue = document.getElementById("hsl-color-value");
+let hslColorValue_text = document.getElementById("hsl-color-value-text");
+let addToFavBtn = document.getElementById("add-to-fav-button");
+let copyToClipboardBtn = document.getElementById("copy-to-clipboard");
 
 function createGridForHue(param) {
 
@@ -79,11 +82,23 @@ function createGridForHue(param) {
             }
             gridColorItems[i][0].style.border = "4px solid white";
             selectedColor.style.backgroundColor = gridColorItems[i][0].style.backgroundColor;
-            selectedColor.innerText = gridColorItems[i][1];
+            
+            btnsForPickedColor.style.display= "grid";
+            addToFavBtn.style.gridTemplateColumns = "repeat(2, 1fr)";
+            addToFavBtn.style.border = "2px solid black";
+            // hslColorValue.style.border = "1px solid black";
+            hslColorValue_text.innerText = gridColorItems[i][1];
+
         })
     }
 
 }
+
+copyToClipboardBtn.addEventListener("click", function() {
+    hslColorValue_text.innerText.select;
+    navigator.clipboard.writeText(hslColorValue_text.innerText);
+    alert("hsl copied to clipboard")
+})
 
 let defaultHue = document.getElementById(0);
 

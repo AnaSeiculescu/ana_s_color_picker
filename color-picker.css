@@ -20,7 +20,7 @@ h1 {
                          "footer footer";
     grid-template-columns: 1fr 8fr;
     gap: 15px;
-    grid-template-rows: 40px 460px 45px 45px;
+    grid-template-rows: 40px 460px 45px 90px;
     width: 560px;
     margin: 0 auto;
     /* border: 2px solid black; */
@@ -67,11 +67,14 @@ main {
 section {
     grid-area: section;
     display: inline-flex;
-    justify-content: space-between;
 }
 
 footer {
     grid-area: footer;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    grid-template-rows: 1fr 0.7fr;
 }
 
 #border-top-color {
@@ -84,4 +87,77 @@ footer {
     font-size: 20px;
     margin-top: 10px;
     margin-left: 5px;
+}
+
+#buttons-for-picked-color {
+    display: none;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    justify-content: space-between;
+    font-size: 18px;
+}
+
+#hsl-color-value {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 0.15fr 1fr;
+    position: relative;
+}
+
+#hsl-color-value-text {
+    padding-top: 5px;
+}
+
+#add-to-fav-button {
+    padding-top: 5px;
+    /* background-color:lightgray; */
+    border-radius: 10px;
+}
+
+#add-to-fav-button:hover {
+    cursor: grab;
+}
+
+#copy-to-clipboard {
+    /* border: 2px solid black; */
+    position: relative;
+    background-color:darkgrey;
+    border-radius: 50%;
+}
+
+#copy-to-clipboard:hover {
+    cursor: grab;
+}
+
+#copy-to-clipboard:hover + #text-indicates-copy-btn {
+    display: block;
+}
+
+#first-square, #second-square {
+    border: 2px solid black;
+    position: relative;
+    width: 9px;
+    height: 9px;
+    background-color: white;
+}
+
+#first-square {
+    top: 8px;
+    left: 14px;
+}
+
+#second-square {
+    top: 0px;
+    left: 8px;
+}
+
+#text-indicates-copy-btn {
+    display: none;
+    position: absolute;
+    top: 45px;
+    left: -55px;
+    color:dimgray;
+    border: 1px solid dimgray;
+    border-radius: 7px;
+    padding: 4px;
 }
