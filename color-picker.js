@@ -45,6 +45,14 @@ let hslColorValue_text = document.getElementById("hsl-color-value-text");
 let addToFavBtn = document.getElementById("add-to-fav-button");
 let copyToClipboardBtn = document.getElementById("copy-to-clipboard");
 
+let favorites = document.getElementById("favorites");
+
+let favoritesHeader = document.getElementById("favorites-header");
+
+let listFavColors = document.getElementById("favorite-colors-list");
+
+let content = document.getElementById("content");
+
 function createGridForHue(param) {
 
     let gridColorItems = [];
@@ -65,8 +73,6 @@ function createGridForHue(param) {
             gridColors.appendChild(colorItem);
             gridColorItems.push(item);
 
-            // hslColorValue.innerText = `hsl(${param}, ${m}%, ${n}%)`;
-
         }
 
     }
@@ -84,10 +90,14 @@ function createGridForHue(param) {
             selectedColor.style.backgroundColor = gridColorItems[i][0].style.backgroundColor;
             
             btnsForPickedColor.style.display= "grid";
-            addToFavBtn.style.gridTemplateColumns = "repeat(2, 1fr)";
             addToFavBtn.style.border = "2px solid black";
-            // hslColorValue.style.border = "1px solid black";
             hslColorValue_text.innerText = gridColorItems[i][1];
+
+            copyToClipboardBtn.classList.add("fa-solid");
+            copyToClipboardBtn.classList.add("fa-clone");
+            copyToClipboardBtn.classList.add("fa-lg");
+
+            console.log("gridColorItems[i][1] = " + gridColorItems[i][1]);
 
         })
     }
@@ -97,7 +107,47 @@ function createGridForHue(param) {
 copyToClipboardBtn.addEventListener("click", function() {
     hslColorValue_text.innerText.select;
     navigator.clipboard.writeText(hslColorValue_text.innerText);
-    alert("hsl copied to clipboard")
+})
+
+addToFavBtn.addEventListener("click", function() {
+
+    favorites.style.transition = "width 2s";
+    favorites.style.display = "grid";
+
+    let colorBoxSaved = document.createElement("div");
+    colorBoxSaved.style.height = "25px";
+    listFavColors.appendChild(colorBoxSaved);
+
+    let savedColor = document.createElement("div");
+    savedColor.style.height = "25px";
+
+
+    let savedColor_hsl = document.createElement("p");
+    savedColor_hsl.innerText = hslColorValue_text.innerText;
+    savedColor_hsl.classList.add("text-indicates-hsl");
+    savedColor.appendChild(savedColor_hsl);
+
+    let savedColor_copyBtn = document.createElement("div");
+    let savedColor_copyBtn_copyText = document.createElement("p");
+    savedColor_copyBtn_copyText.classList.add("indicates-color-copy-btn");
+    savedColor_copyBtn_copyText.innerText = "copy hsl";
+    savedColor_copyBtn.appendChild(savedColor_copyBtn_copyText);
+
+    savedColor.style.backgroundColor = selectedColor.style.backgroundColor;
+
+    savedColor_copyBtn.classList.add("fa-solid");
+    savedColor_copyBtn.classList.add("fa-clone");
+    savedColor_copyBtn.classList.add("fa-lg");
+
+    colorBoxSaved.appendChild(savedColor);
+    colorBoxSaved.appendChild(savedColor_copyBtn);
+
+    savedColor_copyBtn.addEventListener("click", function() {
+        savedColor_hsl.innerText.select;
+        navigator.clipboard.writeText(savedColor_hsl.innerText);
+    })
+
+    return colorBoxSaved;
 })
 
 let defaultHue = document.getElementById(0);

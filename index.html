@@ -5,6 +5,7 @@
         <title>Ana's Color Picker</title>
         <link rel="stylesheet" href="color-picker.css">
         <script src="jquery-3.6.4.min.js"></script>
+        <script src="https://kit.fontawesome.com/ea142e0ccb.js" crossorigin="anonymous"></script>
     </head>
 
     <body>
@@ -12,41 +13,58 @@
         <div id="border-top-color"></div>
         <h1>Color Picker</h1>
 
-        <div id="color-boxes">
+        <div id="content">
 
-            <header id="titles">
-                <span id="hue">Hue</span>
-                <span id="picked">Pick a color</span>
-            </header>
+            <div id="color-boxes">
 
-            <ul id="batch-colors-rect"></ul>
-
-            <main id="big-rect">
-
-            </main>
-
-            <section id="hue-value">
-                <p>Hue value: <span id="hue-number"></span></p>
-            </section>
-
-            <footer>
-                <div id="selected-color"></div>
-                <div id="buttons-for-picked-color">
-                    <div id="hsl-color-value">
-                        <div id="copy-to-clipboard">
-                            <div id="first-square"></div>
-                            <div id="second-square"></div>
+                <header id="titles">
+                    <span id="hue">Hue</span>
+                    <span id="picked">Pick a color</span>
+                </header>
+    
+                <ul id="batch-colors-rect"></ul>
+    
+                <main id="big-rect">
+    
+                </main>
+    
+                <section id="hue-value">
+                    <p>Hue value: <span id="hue-number"></span></p>
+                </section>
+    
+                <footer>
+                    <div id="selected-color"></div>
+                    <div id="buttons-for-picked-color">
+                        <div id="hsl-color-value">
+                            <div id="copy-to-clipboard">
+                                <!-- <div id="first-square"></div>
+                                <div id="second-square"></div> -->
+                            </div>
+                            <p class="text-indicates-copy-btn">copy hsl to clipboard</p>
+                            <p id="hsl-color-value-text"></p>
                         </div>
-                        <p id="text-indicates-copy-btn">copy hsl to clipboard</p>
-                        <p id="hsl-color-value-text"></p>
+                        <div id="add-to-fav-button">
+                            add to favorites
+                        </div>
                     </div>
-                    <div id="add-to-fav-button">
-                        add to favorites
-                    </div>
+                </footer>
+    
+            </div>
+
+            <div id="favorites">
+                <div id="favorites-header">
+                    Favorite colors
                 </div>
-            </footer>
+                <div id="favorite-colors-list">
+                
+                </div>
+            </div>
+
+            
 
         </div>
+
+        
 
         <script src="color-picker.js"></script>
 
