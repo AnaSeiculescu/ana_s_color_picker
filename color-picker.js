@@ -8,6 +8,7 @@ function createColorBox(hue) {
     colorBox.style.backgroundColor = "hsl(" + hue + ", 100%, 50%)";
 
     colorBox.addEventListener("click", function() {
+
         for (let k = 0; k < 360; k += 10) {
             let borderVerif = document.getElementById(k);
             if (borderVerif.style.border == "2px solid black") {
@@ -111,8 +112,8 @@ copyToClipboardBtn.addEventListener("click", function() {
 
 addToFavBtn.addEventListener("click", function() {
 
-    favorites.style.transition = "width 2s";
-    favorites.style.display = "grid";
+    favorites.style.opacity = "1";
+    favorites.style.transition = "opacity 2s";
 
     let colorBoxSaved = document.createElement("div");
     colorBoxSaved.style.height = "25px";
@@ -120,7 +121,6 @@ addToFavBtn.addEventListener("click", function() {
 
     let savedColor = document.createElement("div");
     savedColor.style.height = "25px";
-
 
     let savedColor_hsl = document.createElement("p");
     savedColor_hsl.innerText = hslColorValue_text.innerText;
@@ -158,10 +158,7 @@ jQuery(document).ready(function() {
         hueNumber.innerText = 0;
         hueValue.style.backgroundColor = defaultHue.style.backgroundColor;
         defaultHue.style.border = "2px solid black";
-
         createGridForHue(0);
-    
-        console.log(gridColors);
     });
 });
 
