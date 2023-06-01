@@ -5,6 +5,7 @@
         <title>Ana's Color Picker</title>
         <link rel="stylesheet" href="color-picker.css">
         <script src="jquery-3.6.4.min.js"></script>
+        <script src="https://kit.fontawesome.com/ea142e0ccb.js" crossorigin="anonymous"></script>
     </head>
 
     <body>
@@ -12,29 +13,57 @@
         <div id="border-top-color"></div>
         <h1>Color Picker</h1>
 
-        <div id="color-boxes">
+        <div id="content">
 
-            <header id="titles">
-                <span id="hue">Hue</span>
-                <span id="picked">Pick a color</span>
-            </header>
+            <div id="color-boxes">
 
-            <ul id="batch-colors-rect"></ul>
+                <header id="titles">
+                    <span id="hue">Hue</span>
+                    <span id="picked">Pick a color</span>
+                </header>
+    
+                <ul id="batch-colors-rect"></ul>
+    
+                <main id="big-rect">
+    
+                </main>
+    
+                <section id="hue-value">
+                    <p>Hue value: <span id="hue-number"></span></p>
+                </section>
+    
+                <footer>
+                    <div id="selected-color"></div>
+                    <div id="buttons-for-picked-color">
+                        <div id="hsl-color-value">
+                            <div id="copy-to-clipboard">
+                            
+                            </div>
+                            <p class="text-indicates-copy-btn">copy hsl to clipboard</p>
+                            <p id="hsl-color-value-text"></p>
+                        </div>
+                        <div id="add-to-fav-button">
+                            add to favorites
+                        </div>
+                    </div>
+                </footer>
+    
+            </div>
 
-            <main id="big-rect">
+            <div id="favorites">
+                <div id="favorites-header">
+                    Favorite colors
+                </div>
+                <div id="favorite-colors-list">
+                
+                </div>
+            </div>
 
-            </main>
-
-            <section id="hue-value">
-                <p>Hue value: <span id="hue-number"></span></p>
-                <!-- <p id="hsl-color-value"></p> -->
-            </section>
-
-            <footer id="selected-color">
-                <!-- <p id="text-to-disappear">Select Hue</p> -->
-            </footer>
+            
 
         </div>
+
+        
 
         <script src="color-picker.js"></script>
 
