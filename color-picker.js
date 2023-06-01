@@ -110,6 +110,8 @@ copyToClipboardBtn.addEventListener("click", function() {
     navigator.clipboard.writeText(hslColorValue_text.innerText);
 })
 
+let storageArr = [];
+
 addToFavBtn.addEventListener("click", function() {
 
     favorites.style.opacity = "1";
@@ -121,9 +123,16 @@ addToFavBtn.addEventListener("click", function() {
 
     let savedColor = document.createElement("div");
     savedColor.style.height = "25px";
+    savedColor.style.backgroundColor = selectedColor.style.backgroundColor;
 
     let savedColor_hsl = document.createElement("p");
     savedColor_hsl.innerText = hslColorValue_text.innerText;
+
+    storageArr.push(savedColor_hsl.innerText);
+    localStorage.setItem("storageArr", JSON.stringify(storageArr));
+    console.log("storageArr = " + storageArr);
+    console.log(typeof(storageArr));
+
     savedColor_hsl.classList.add("text-indicates-hsl");
     savedColor.appendChild(savedColor_hsl);
 
@@ -132,8 +141,6 @@ addToFavBtn.addEventListener("click", function() {
     savedColor_copyBtn_copyText.classList.add("indicates-color-copy-btn");
     savedColor_copyBtn_copyText.innerText = "copy hsl";
     savedColor_copyBtn.appendChild(savedColor_copyBtn_copyText);
-
-    savedColor.style.backgroundColor = selectedColor.style.backgroundColor;
 
     savedColor_copyBtn.classList.add("fa-solid");
     savedColor_copyBtn.classList.add("fa-clone");
@@ -152,6 +159,8 @@ addToFavBtn.addEventListener("click", function() {
 
 let defaultHue = document.getElementById(0);
 
+let storageExtraction
+
 jQuery(document).ready(function() {
     jQuery(defaultHue).ready(function() {
         jQuery(this).click();
@@ -160,5 +169,64 @@ jQuery(document).ready(function() {
         defaultHue.style.border = "2px solid black";
         createGridForHue(0);
     });
+
+    if (typeof(Storage) !== "undefined") {
+    
+        storageExtraction = JSON.parse(localStorage.getItem("storageArr"));
+    
+        console.log(typeof storageExtraction);
+    
+        console.log(storageExtraction);
+    
+    } else {
+        console.log("Storage is undefined");
+    }
+
+    for (let hue = 0; hue < storageExtraction.length; hue++) {
+        
+        recreateFavoriteColorsList(storageExtraction[hue]);
+
+        storageArr.push(storageExtraction[hue]);
+
+    }
+
 });
 
+function recreateFavoriteColorsList(param) {
+    favorites.style.opacity = "1";
+    favorites.style.transition = "opacity 2s";
+
+    let colorBoxSaved = document.createElement("div");
+    colorBoxSaved.style.height = "25px";
+    listFavColors.appendChild(colorBoxSaved);
+
+    let savedColor = document.createElement("div");
+    savedColor.style.height = "25px";
+    savedColor.style.backgroundColor = param;
+
+    let savedColor_hsl = document.createElement("p");
+    savedColor_hsl.innerText = param;
+
+    savedColor_hsl.classList.add("text-indicates-hsl");
+    savedColor.appendChild(savedColor_hsl);
+
+    let savedColor_copyBtn = document.createElement("div");
+    let savedColor_copyBtn_copyText = document.createElement("p");
+    savedColor_copyBtn_copyText.classList.add("indicates-color-copy-btn");
+    savedColor_copyBtn_copyText.innerText = "copy hsl";
+    savedColor_copyBtn.appendChild(savedColor_copyBtn_copyText);
+
+    savedColor_copyBtn.classList.add("fa-solid");
+    savedColor_copyBtn.classList.add("fa-clone");
+    savedColor_copyBtn.classList.add("fa-lg");
+
+    colorBoxSaved.appendChild(savedColor);
+    colorBoxSaved.appendChild(savedColor_copyBtn);
+
+    savedColor_copyBtn.addEventListener("click", function() {
+        savedColor_hsl.innerText.select;
+        navigator.clipboard.writeText(savedColor_hsl.innerText);
+    })
+
+    return colorBoxSaved;
+}
