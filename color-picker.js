@@ -118,6 +118,11 @@ addToFavBtn.addEventListener("click", function() {
     favorites.style.transition = "opacity 2s";
 
     let colorBoxSaved = document.createElement("div");
+    colorBoxSaved.id = hslColorValue_text.innerText;
+
+    console.log("id-ul este:");
+    console.log(colorBoxSaved.id);
+
     colorBoxSaved.style.height = "25px";
     listFavColors.appendChild(colorBoxSaved);
 
@@ -134,6 +139,8 @@ addToFavBtn.addEventListener("click", function() {
     console.log(typeof(storageArr));
 
     savedColor_hsl.classList.add("text-indicates-hsl");
+    // let text_indicates_hsl = document.getElementsByClassName("text-indicates-hsl");
+    // text_indicates_hsl.style.display = "block";
     savedColor.appendChild(savedColor_hsl);
 
     let savedColor_copyBtn = document.createElement("div");
@@ -146,16 +153,54 @@ addToFavBtn.addEventListener("click", function() {
     savedColor_copyBtn.classList.add("fa-clone");
     savedColor_copyBtn.classList.add("fa-lg");
 
-    colorBoxSaved.appendChild(savedColor);
+    const deleteBtn = addDeleteBox();
+    const id = hslColorValue_text.innerText;
+
     colorBoxSaved.appendChild(savedColor_copyBtn);
+    colorBoxSaved.appendChild(savedColor);
+    colorBoxSaved.appendChild(deleteBtn);
 
     savedColor_copyBtn.addEventListener("click", function() {
         savedColor_hsl.innerText.select;
         navigator.clipboard.writeText(savedColor_hsl.innerText);
     })
 
-    return colorBoxSaved;
+    deleteColorItem(deleteBtn, id);
+
 })
+
+function addDeleteBox() {
+    const deleteBtn = document.createElement("div");
+    deleteBtn.classList.add("fa-solid");
+    deleteBtn.classList.add("fa-circle-xmark");
+    deleteBtn.classList.add("fa-lg");
+    deleteBtn.style.color = "#000000";
+    return deleteBtn;
+}
+
+function deleteColorItem(deleteBtn, id) {
+    deleteBtn.addEventListener("click", function() {
+
+        console.log("s-a bifat delete");
+        console.log('id: ', id)
+
+        let colorItemToDelete = document.getElementById(id);
+        // console.log("colorItemToDelete = ");
+        // console.log(colorItemToDelete);
+
+        for (let i = 0; i < storageArr.length; i++) {
+            if (storageArr[i].trim() === colorItemToDelete.id) {
+                storageArr.splice(i, 1);
+                break;
+            }
+        }
+        colorItemToDelete.remove();
+        localStorage.setItem("storageArr", JSON.stringify(storageArr));
+
+        console.log("storageArr este: ");
+        console.log(storageArr);
+    })
+}
 
 let defaultHue = document.getElementById(0);
 
@@ -184,7 +229,7 @@ jQuery(document).ready(function() {
 
     for (let hue = 0; hue < storageExtraction.length; hue++) {
         
-        recreateFavoriteColorsList(storageExtraction[hue]);
+        recreateFavoriteColorsList(storageExtraction[hue]); 
 
         storageArr.push(storageExtraction[hue]);
 
@@ -197,6 +242,8 @@ function recreateFavoriteColorsList(param) {
     favorites.style.transition = "opacity 2s";
 
     let colorBoxSaved = document.createElement("div");
+    colorBoxSaved.id = param;
+
     colorBoxSaved.style.height = "25px";
     listFavColors.appendChild(colorBoxSaved);
 
@@ -220,13 +267,17 @@ function recreateFavoriteColorsList(param) {
     savedColor_copyBtn.classList.add("fa-clone");
     savedColor_copyBtn.classList.add("fa-lg");
 
-    colorBoxSaved.appendChild(savedColor);
+    const deleteBtn = addDeleteBox();
+
     colorBoxSaved.appendChild(savedColor_copyBtn);
+    colorBoxSaved.appendChild(savedColor);
+    colorBoxSaved.appendChild(deleteBtn);
 
     savedColor_copyBtn.addEventListener("click", function() {
         savedColor_hsl.innerText.select;
         navigator.clipboard.writeText(savedColor_hsl.innerText);
     })
 
-    return colorBoxSaved;
+    deleteColorItem(deleteBtn, param);
 }
+
