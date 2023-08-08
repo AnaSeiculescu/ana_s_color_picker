@@ -1,15 +1,32 @@
 * {
     margin: 0;
     padding: 0;
+    /* font-family: Amiko, sans-serif; */
 }
 
-h1 {
-    border: 2px solid lightgrey;
-    padding: 15px;
-    color:darkslategrey;
+#menu {
+    display: flex;
+    justify-content:end;
+    align-items: center;
+    padding: 10px 50px;
     background-color:whitesmoke;
-    text-align: center;
+    border: 2px solid lightgrey;
     margin-bottom: 50px;
+    font-family: "Edu TAS Beginner", sans-serif;
+}
+
+#main-text {
+    /* align-self: flex-end; */
+    color:darkslategrey;
+    text-align: right;
+    font-family: "Edu TAS Beginner", sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+#main-text > div {
+    border: 1px solid red;
+    border-radius: 50%;
 }
 
 #color-boxes {
@@ -39,7 +56,7 @@ header {
 }
 
 header > span {
-    font-size: 20px;
+    font-size: 16px;
     text-align: center;
 }
 
@@ -85,11 +102,22 @@ footer {
 #border-top-color {
     height: 30px;
     background-color: lightslategray;
+    display: flex;
+    align-items: center;
+}
+
+#border-top-color > p {
+    color: white;
+    font-family: "Edu TAS Beginner", sans-serif;
+    font-size: 18px;
+    text-align: left;
+    padding: 0px 30px;
+    font-size: 500;
 }
 
 #hue-value > p {
     text-align: left;
-    font-size: 20px;
+    font-size: 16px;
     margin-top: 13px;
     margin-left: 5px;
 }
@@ -99,7 +127,7 @@ footer {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     justify-content: space-between;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 #hsl-color-value {
@@ -116,8 +144,11 @@ footer {
 }
 
 #add-to-fav-button {
+    background-color: white;
+    color: black;
     padding-top: 5px;
     border-radius: 5px;
+    border: 2px solid lightslategray;
 }
 
 #add-to-fav-button:hover {
@@ -166,6 +197,7 @@ footer {
     margin: 0 auto;
     height: 720.8px;
     width: 800px;
+    font-family: Amiko, sans-serif;
 }
 
 #favorites {
@@ -181,7 +213,7 @@ footer {
     grid-template-rows: 40px;
     border-bottom: 2px solid lightslategray;
     box-shadow: 0px 4px 3px lightslategray;
-    font-size: 20px;
+    font-size: 16px;
     text-align: center;
     display: grid;
     align-items: center;
@@ -257,7 +289,7 @@ footer {
     border: 1px solid dimgray;
     border-radius: 2px;
     padding: 2px;
-    font-size: 10px;
+    font-size: 12px;
     letter-spacing: 1px;
 }
 

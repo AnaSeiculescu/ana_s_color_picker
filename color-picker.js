@@ -91,7 +91,6 @@ function createGridForHue(param) {
             selectedColor.style.backgroundColor = gridColorItems[i][0].style.backgroundColor;
             
             btnsForPickedColor.style.display= "grid";
-            addToFavBtn.style.border = "2px solid black";
             hslColorValue_text.innerText = gridColorItems[i][1];
 
             copyToClipboardBtn.classList.add("fa-solid");
@@ -139,8 +138,6 @@ addToFavBtn.addEventListener("click", function() {
     console.log(typeof(storageArr));
 
     savedColor_hsl.classList.add("text-indicates-hsl");
-    // let text_indicates_hsl = document.getElementsByClassName("text-indicates-hsl");
-    // text_indicates_hsl.style.display = "block";
     savedColor.appendChild(savedColor_hsl);
 
     let savedColor_copyBtn = document.createElement("div");
@@ -169,6 +166,14 @@ addToFavBtn.addEventListener("click", function() {
 
 })
 
+addToFavBtn.addEventListener("mousedown", function(ev) {
+    addToFavBtn.style.border = "4px solid lightslategray";
+})
+
+addToFavBtn.addEventListener("mouseup", function(ev) {
+    addToFavBtn.style.border = "2px solid lightslategray";
+})
+
 function addDeleteBox() {
     const deleteBtn = document.createElement("div");
     deleteBtn.classList.add("fa-solid");
@@ -185,8 +190,6 @@ function deleteColorItem(deleteBtn, id) {
         console.log('id: ', id)
 
         let colorItemToDelete = document.getElementById(id);
-        // console.log("colorItemToDelete = ");
-        // console.log(colorItemToDelete);
 
         for (let i = 0; i < storageArr.length; i++) {
             if (storageArr[i].trim() === colorItemToDelete.id) {
