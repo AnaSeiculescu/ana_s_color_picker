@@ -118,12 +118,18 @@ addToFavBtn.addEventListener("click", function() {
 
     let colorBoxSaved = document.createElement("div");
     colorBoxSaved.id = hslColorValue_text.innerText;
+    colorBoxSaved.classList.add("favoriteColor");
 
     console.log("id-ul este:");
     console.log(colorBoxSaved.id);
 
     colorBoxSaved.style.height = "25px";
-    listFavColors.appendChild(colorBoxSaved);
+    let favoriteColors = document.getElementsByClassName("favoriteColor");
+    if (listFavColors.hasChildNodes() == 0) {
+        listFavColors.appendChild(colorBoxSaved);
+    } else {
+        listFavColors.insertBefore(colorBoxSaved, favoriteColors[0]);
+    }
 
     let savedColor = document.createElement("div");
     savedColor.style.height = "25px";
@@ -246,9 +252,16 @@ function recreateFavoriteColorsList(param) {
 
     let colorBoxSaved = document.createElement("div");
     colorBoxSaved.id = param;
+    colorBoxSaved.classList.add("favoriteColor");
 
     colorBoxSaved.style.height = "25px";
-    listFavColors.appendChild(colorBoxSaved);
+    // listFavColors.appendChild(colorBoxSaved);
+    let favoriteColors = document.getElementsByClassName("favoriteColor");
+    if (listFavColors.hasChildNodes() == 0) {
+        listFavColors.appendChild(colorBoxSaved);
+    } else {
+        listFavColors.insertBefore(colorBoxSaved, favoriteColors[0]);
+    }
 
     let savedColor = document.createElement("div");
     savedColor.style.height = "25px";
