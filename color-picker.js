@@ -256,6 +256,7 @@ function recreateFavoriteColorsList(param) {
 
     colorBoxSaved.style.height = "25px";
     // listFavColors.appendChild(colorBoxSaved);
+    
     let favoriteColors = document.getElementsByClassName("favoriteColor");
     if (listFavColors.hasChildNodes() == 0) {
         listFavColors.appendChild(colorBoxSaved);
