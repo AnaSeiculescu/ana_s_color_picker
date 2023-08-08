@@ -292,9 +292,6 @@ function recreateFavoriteColorsList(param) {
     colorBoxSaved.appendChild(savedColor);
     colorBoxSaved.appendChild(deleteBtn);
 
-    colorBoxSaved.appendChild(savedColor);
-    colorBoxSaved.appendChild(savedColor_copyBtn);
-
     savedColor_copyBtn.addEventListener("click", function() {
         savedColor_hsl.innerText.select;
         navigator.clipboard.writeText(savedColor_hsl.innerText);
